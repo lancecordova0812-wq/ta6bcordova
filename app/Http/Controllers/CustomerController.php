@@ -1,0 +1,14 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Customer;
+
+class CustomerController extends Controller
+{
+    public function index()
+    {
+        $customers = Customer::orderBy('id')->get();
+        return view('customers', ['title' => 'Customer Accounts', 'customers' => $customers]);
+    }
+}

@@ -1,0 +1,2 @@
+@extends('layouts.app')
+@section('content')<h1>Customer Accounts</h1><p class="lead">Records retrieved with <code>Customer::orderBy('id')->get()</code>.</p><div class="table-wrap"><table><thead><tr><th>ID</th><th>Full Name</th><th>Email</th><th>Phone</th><th>Status</th></tr></thead><tbody>@foreach ($customers as $customer)<tr><td>{{ $customer->id }}</td><td>{{ $customer->full_name }}</td><td>{{ $customer->email }}</td><td>{{ $customer->phone }}</td><td><span class="tag">Active</span></td></tr>@endforeach</tbody></table></div>@endsection
